@@ -5,7 +5,7 @@
 #include <curl/curl.h>
 #include "lib/parson.h"
 
-#define API_BASE "localhost:3000"
+#define API_BASE "osmc.local:3000"
 
 #define DEBUG 1
 

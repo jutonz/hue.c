@@ -1,0 +1,7 @@
+{
+  "name": "hue.c",
+  "author": "Justin Toniazzo <jutonz42@gmail.com>",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "A lightweight library for controlling hue lights"
+}
