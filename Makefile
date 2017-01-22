@@ -8,8 +8,8 @@ release: build/hue.c.o build/parson.o
 	mkdir build
 	CC -Wall -lcurl -O3 -o bin/lights build/hue.c.o build/parson.o
 
-build/hue.c.o: firmware/hue.c.c
-	CC -c firmware/hue.c.c -o build/hue.c.o
+build/hue.c.o: firmware/hue.c.cpp
+	CC -c firmware/hue.c.cpp -o build/hue.c.o
 
 build/parson.o: lib/parson.c
 	CC -c lib/parson.c -o build/parson.o
