@@ -1,16 +1,22 @@
 CC = clang
 
-build: main.o parson.o
-	CC -Wall -lcurl -o lights main.o parson.o
+build: setup build/hue.c.o build/parson.o
+	CC -Wall -lcurl -o bin/lights build/hue.c.o build/parson.o
 
-release: main.o parson.o
-	CC -Wall -lcurl -O3 -o lights main.o parson.o
+release: build/hue.c.o build/parson.o
+	mkdir bin
+	mkdir build
+	CC -Wall -lcurl -O3 -o bin/lights build/hue.c.o build/parson.o
 
-main.o: main.c
-	CC -c main.c
+build/hue.c.o: firmware/hue.c.c
+	CC -c firmware/hue.c.c -o build/hue.c.o
 
-parson.o: lib/parson.c
-	CC -c lib/parson.c
+build/parson.o: lib/parson.c
+	CC -c lib/parson.c -o build/parson.o
+
+setup:
+	mkdir -p bin
+	mkdir -p build
 
 clean:
-	rm lights main.o parson.o
+	rm -r bin build

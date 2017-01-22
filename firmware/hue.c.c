@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <curl/curl.h>
-#include "lib/parson.h"
+#include "../lib/parson.h"
 
 #define API_BASE "osmc.local:3000"
 
